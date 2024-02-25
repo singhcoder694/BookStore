@@ -1,0 +1,94 @@
+.card_container{
+    display: grid;
+    grid-template-rows: fit-content fit-content;
+    grid-template-columns: 1fr;
+    border:1px solid white;
+    padding:10px;
+    border-radius: 20px;
+    margin:20px;
+}
+.book_image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.book_image img{
+    object-fit: contain;
+    height: 90%;
+    max-height: 300px;
+    width:90%;
+    max-width: 300px;
+    margin:auto 3%;
+    box-shadow: 0px 0px 5px 1px white;
+}
+.book_detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.book_detail p{
+    margin: 0;
+    padding: 0;
+}
+.book_name{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.book_detail .book_name{
+    font-size: clamp(1rem, 2vw, 2rem);
+    font-weight: 500;
+    margin:3% auto 0 auto;
+}
+.book_price{
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    margin:0 auto;
+    padding:0;
+}
+.option_buttons{
+    display: grid;
+    place-items: center center;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 2.5rem;
+    margin:3%;
+}
+.option_buttons a{
+    width: 100%;
+    height: 100%;
+    padding:0;
+    margin:0;
+}
+.option_buttons button{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+.detail_button{
+    background-color: transparent;
+    border: 1px solid aqua;
+    color:aqua;
+    transition: all 0.3s ease;
+}
+.detail_button:hover{
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+.detail_button:active{
+    transform: scale(0.95);
+}
+.add_to_cart{
+    background-color: aqua;
+    border: 1px solid black;
+    color:black;
+    transition: all 0.3s ease;
+}
+.add_to_cart:hover{
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+.add_to_cart:active{
+    transform: scale(0.95);
+}

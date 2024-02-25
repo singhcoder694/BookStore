@@ -1,0 +1,174 @@
+/* ALL FORM CSS */
+.contact_form {
+  display: grid;
+  height: fit-content;
+  width: 60vw;
+
+  margin: 50px auto 10px auto;
+  box-shadow: 1px 1px 3px 2px grey, 1px 1px 3px 2px grey;
+  grid-template-rows: 1fr auto;
+  border-radius: 5px;
+}
+@media only screen and (min-width: 800px) and (max-width: 1000px) {
+  .contact_form {
+    width: 80vw;
+    height: 60%;
+  }
+}
+@media only screen and (max-width: 800px) and (min-width: 700px) {
+  .contact_form {
+    width: 80vw;
+    margin-top: 20px;
+  }
+}
+@media only screen and (max-width: 700px) and (min-width: 600px) {
+  .contact_form {
+    width: 80vw;
+    margin-top: 20px;
+  }
+}
+@media only screen and (max-width: 600px) and (min-width: 540px) {
+  .contact_form {
+    width: 80vw;
+    margin-top: 20px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .contact_form {
+    width: 90vw;
+  }
+}
+.getintouch {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+  height: fit-content;
+  font-size: 1.5rem;
+}
+.getintouch h2 {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 10px;
+  color: white;
+  margin: 0px;
+}
+.details {
+  display: grid;
+  grid-template-rows: 1fr;
+  margin-top: 2%;
+}
+@media only screen and (min-width: 800px) {
+  .details {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    height: fit-content;
+    margin-top: 2%;
+  }
+}
+.message {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+.inputcss {
+  border-radius: 5px;
+  transition: all 0.6s ease;
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 95%;
+  font-size: 1.2rem;
+  background-color: rgba(var(--callout-rgb), 11);
+  color: white;
+  padding: 10px;
+  margin: 1rem;
+}
+.inputcss:focus {
+  border-bottom: 2px solid white;
+  color: white;
+  box-shadow: 0px 0px 10px 1px rgb(0, 255, 238);
+}
+.inputcss:focus::placeholder {
+  transition: all 0.4s ease;
+  color: transparent;
+}
+.textareacss {
+  padding: 10px;
+  margin-left: 2%;
+  border-radius: 5px;
+  transition: all 0.6s ease;
+  margin: 2% 2%;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  resize: none;
+  font-family: arial;
+  width: 95%;
+  font-size: 1.2rem;
+  background-color: rgba(var(--callout-rgb), 11);
+}
+.textareacss:focus {
+  border-bottom: 2px solid white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 5px rgb(0, 255, 238);
+}
+.textareacss:focus::placeholder {
+  transition: all 0.4s ease;
+  color: transparent;
+}
+.message button {
+  width: 90%;
+  font-size: 1.5rem;
+  height: 3rem;
+  border: none;
+  margin: 2.5% auto 0% auto;
+  border-radius: 5px;
+  color: white;
+  transform: scale(1);
+  border: 2px solid white;
+  background-color: rgba(var(--callout-rgb), 11);
+  transition: all 0.3s ease;
+  width: 100%;
+}
+@media only screen and (min-width: 800px) {
+  .message button {
+    height: 3rem;
+    width: 98%;
+  }
+}
+.message button:hover {
+  transform: scale(1.05);
+  border: 2px solid aqua;
+  background-color: rgba(var(--callout-rgb), 11);
+  color: aqua;
+  cursor: pointer;
+}
+.message button:active{
+  transform: scale(0.95);
+}
+.name_email {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+@media (min-width: 800px) {
+  .name_email {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+  .inputcss {
+    margin: 1rem 1.1%;
+  }
+}
+.others {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}

@@ -1,0 +1,211 @@
+.profile_details{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding-left:15%;
+    padding-top:40px;
+    background-color: #242424;
+    
+}
+@media screen and (max-width:970px) {
+    .profile_details{
+        padding-left: 8%;
+        padding-top: 0;
+    }
+}
+@media screen and (max-width:570px) {
+    .profile_details{
+        padding-left: 8%;
+        padding-top: 0;
+    }
+}
+.greet{
+    font-size: 2rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+.name{
+    font-size: 4rem;
+    color:aqua;
+    margin-top:0px;
+    margin-bottom: 0px;
+    font-family: Kalnia;
+    font-weight: 900;
+}
+.work{
+    font-size: 2rem;
+    margin-top: 0px;
+    color:white;
+    margin-bottom: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+.work_{
+    color:aqua;
+    font-family: kalnia;
+    font-weight: 600;
+}
+.brief_about{
+    color:white;
+    font-size: 1.1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding:0px 28px 0px 0px;
+}
+.about_small{
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-top:0px;
+    color:white;
+}
+.profile_links{
+    color:aqua;
+    display: flex;
+    margin: 0px;
+    align-items: center;
+}
+.icon_{
+    font-size: 2rem;
+    color:aqua;
+    height: fit-content;
+    margin-right:30px;
+    margin-left:0px;
+    transform: scale(1);
+    transition: all ease .3s;
+}
+.profile_links .icon_:hover{
+    transform: scale(1.1);
+    cursor:pointer;
+}
+.main_buttons{
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    margin-top: 2%;
+}
+.button_cv{
+    background-color: transparent;
+    border:1px solid aqua;
+    width:12rem;
+    height:3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin:10px 20px 10px 0px;
+    border-radius: 10px;
+    transform: scale(1);
+    box-shadow: 0 0px 5px 1px rgb(5, 193, 235), 0 2px 2px 0 rgb(5, 193, 235);
+    transition: all 0.3s ease;
+}
+.button_cv a{
+    display: flex;
+    text-decoration: none;
+    margin-left:auto;
+    font-size: 1.5rem;
+    color:aqua;
+    font-weight: 400;
+    font-family: sans-serif;
+    height: inherit;
+    width: inherit;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.button_cv2{
+    background-color: aqua;
+    border:1px solid black;
+    width:12rem;
+    height:3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin:10px 20px 10px 0px;
+    border-radius: 10px;
+    transform: scale(1);
+    box-shadow: 0 0px 5px 1px rgb(5, 193, 235), 0 2px 2px 0 rgb(5, 193, 235);
+    transition: all 0.3s ease;
+}
+.button_cv2 a{
+    display: flex;
+    text-decoration: none;
+    margin-left:auto;
+    font-size: 1.5rem;
+    color:black;
+    font-weight: 400;
+    font-family: sans-serif;
+    height: inherit;
+    width: inherit;
+    align-items: center;
+    justify-content: center;
+}
+.button_cv:hover{
+    background-color: aqua;
+    font-size:1.6rem;
+    transform: scale(1.05);
+    /* box-shadow: 0 2px 2px 0 rgba(244, 242, 242, 0.2), 0 2px 2px 0 rgba(255, 255, 255, 0.959); */
+
+}
+.button_cv2:hover{
+    transform: scale(1.05);
+    /* box-shadow: 0 2px 2px 0 rgba(244, 242, 242, 0.2), 0 2px 2px 0 rgba(255, 255, 255, 0.959); */
+
+}
+.button_cv a:hover{
+    color:black;
+}
+@media screen and (max-width:540px) {
+    .greet{
+        font-size:1.8rem;
+    }
+    .name{
+        font-size:3rem;
+    }
+    .work{
+        font-size: 1.8rem;
+    }
+    .button_cv{
+        font-size: 1.3rem;
+        width:9rem;
+    }  
+    .button_cv a{
+        font-size: 1.2rem;
+    } 
+    .button_cv2{
+        font-size: 1.3rem;
+        width:9rem;
+    }  
+    .button_cv2 a{
+        font-size: 1.2rem;
+    } 
+}
+@media screen and (max-width:410px) {
+    .greet{
+        font-size:1.8rem;
+    }
+    .name{
+        font-size:3rem;
+    }
+    .work{
+        font-size: 1.5rem;
+    }
+    .brief_about{
+        font-size: 1rem;
+    }
+    .button_cv{
+        font-size: 1.3rem;
+        width:9rem;
+    }  
+    .button_cv a{
+        font-size: 1.2rem;
+    } 
+    .button_cv2{
+        font-size: 1.3rem;
+        width:9rem;
+    }  
+    .button_cv2 a{
+        font-size: 1.2rem;
+    } 
+}
