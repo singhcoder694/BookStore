@@ -24,7 +24,7 @@ export default function Detail() {
         const delBook = async () => {
             await confirmDelete();
             const result = await toast.promise(
-                fetch("process.env.REACT_APP_BACKEND_URL/delete/:id", {
+                fetch(import.meta.env.VITE_BACKEND_URL + "/delete/:id", {
                     method: "DELETE",
                     headers: {
                         "Content-Type": "application/json",
@@ -45,7 +45,7 @@ export default function Detail() {
     }
     const handleAddToCart = async () => {
         try {
-            const response = await fetch(`process.env.REACT_APP_BACKEND_URL/addtoCart/:id`, {
+            const response = await fetch(import.meta.env.VITE_BACKEND_URL + "/addtoCart/:id", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
