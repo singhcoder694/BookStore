@@ -20,16 +20,16 @@ export default function Detail() {
             }
         });
     };
-    const deleteProduct= ()=>{
-        const delBook= async () =>{
+    const deleteProduct = () => {
+        const delBook = async () => {
             await confirmDelete();
             const result = await toast.promise(
-                fetch("http://localhost:3000/delete/:id", {
+                fetch("process.env.REACT_APP_BACKEND_URL/delete/:id", {
                     method: "DELETE",
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({ISBN: data.ISBN})
+                    body: JSON.stringify({ ISBN: data.ISBN })
                 }).then(res => res.json()),
                 {
                     loading: 'Deleting the book...',
@@ -37,15 +37,15 @@ export default function Detail() {
                     error: 'Failed to delete book.',
                 }
             );
-            if (result.status===200){
-                navigate("/",{replace:true});
+            if (result.status === 200) {
+                navigate("/", { replace: true });
             }
         }
         delBook();
     }
     const handleAddToCart = async () => {
         try {
-            const response = await fetch(`http://localhost:3000/addtoCart/:id`, {
+            const response = await fetch(`process.env.REACT_APP_BACKEND_URL/addtoCart/:id`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

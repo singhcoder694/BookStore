@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { FaShoppingCart } from "react-icons/fa";
 import "./Card.css"
-import toast,{ Toaster } from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 export default function Card(props) {
@@ -11,13 +11,13 @@ export default function Card(props) {
             duration: 800
         });
     }, []);
-    const navigate=useNavigate();
+    const navigate = useNavigate();
     const navigateToDetails = () => {
         navigate('/details', { state: { data: props.data } });
-      };
+    };
     const handleAddToCart = async () => {
         try {
-            const response = await fetch(`http://localhost:3000/addtoCart/:id`, {
+            const response = await fetch(`process.env.REACT_APP_BACKEND_URL/addtoCart/:id`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ export default function Card(props) {
             // alert('Error adding item to cart. Please try again later.');
         }
     };
-    const handleBuyNow = ()=>{
+    const handleBuyNow = () => {
         alert("This service is not available as of Now")
     }
     return (
@@ -53,7 +53,7 @@ export default function Card(props) {
                     <p className='book_price'>$ {props.data.Price}</p>
                     <div className='option_buttons'>
                         <button className='detail_button' onClick={navigateToDetails}>Details</button>
-                        <button className='add_to_cart' onClick={props.button==="Add to Cart"?handleAddToCart : handleBuyNow}>{props.button==="Add to Cart"?<FaShoppingCart />:null}{props.button}</button>
+                        <button className='add_to_cart' onClick={props.button === "Add to Cart" ? handleAddToCart : handleBuyNow}>{props.button === "Add to Cart" ? <FaShoppingCart /> : null}{props.button}</button>
                     </div>
                 </div>
             </div>
