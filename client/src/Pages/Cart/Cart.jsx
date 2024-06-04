@@ -16,7 +16,7 @@ export default function Cart() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await fetch("process.env.REACT_APP_BACKEND_URL/cart");
+                const res = await fetch(import.meta.env.VITE_BACKEND_URL + "/cart");
                 const result = await res.json();
                 toast.success("Book added to Cart Successfully!!")
                 setCartBook(result);

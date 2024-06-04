@@ -17,7 +17,7 @@ export default function Card(props) {
     };
     const handleAddToCart = async () => {
         try {
-            const response = await fetch(`process.env.REACT_APP_BACKEND_URL/addtoCart/:id`, {
+            const response = await fetch(import.meta.env.VITE_BACKEND_URL + "/addtoCart/:id", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

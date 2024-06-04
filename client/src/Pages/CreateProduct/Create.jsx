@@ -22,7 +22,7 @@ function Create() {
             toast.error("Fill all the required fields")
         }
         const result = await toast.promise(
-            fetch("process.env.REACT_APP_BACKEND_URL/create", {
+            fetch(import.meta.env.VITE_BACKEND_URL+ "/create", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

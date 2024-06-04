@@ -12,11 +12,12 @@ export default function Books() {
             duration: 800
         });
     }, []);
+    console.log(import.meta.env.VITE_BACKEND_URL)
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const result = await toast.promise(
-                    fetch("process.env.REACT_APP_BACKEND_URL").then(res => res.json()),
+                    fetch(import.meta.env.VITE_BACKEND_URL).then(res => res.json()),
                     {
                         loading: 'Fetching books...',
                         success: 'Books loaded successfully!',

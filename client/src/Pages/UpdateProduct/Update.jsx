@@ -24,7 +24,7 @@ function Update() {
     const updateBookDetail = () => {
         const fetchData = async () => {
             const result = await toast.promise(
-                fetch("process.env.REACT_APP_BACKEND_URL/update/:id", {
+                fetch(import.meta.env.VITE_BACKEND_URL + "/update/:id", {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json",
