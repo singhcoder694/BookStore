@@ -14,7 +14,11 @@ const port = process.env.PORT || 3000; //It is common practice too.
 
 app.use(bodyParser.urlencoded({ extended: true })); //This is use mostly for form as they are urlencoded. use method is to mount the middleware
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+  origin: process.env.FRONTEND_URL, // Replace with your Vercel URL
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+}));
 app.get("/", (req, res) => { // get method
   res.json(books_list);
 });
