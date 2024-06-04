@@ -5,7 +5,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import toast, { Toaster } from 'react-hot-toast';
 export default function Books() {
-    const [search, setSearch]=useState("");
+    const [search, setSearch] = useState("");
     const [bookData, setBookdata] = useState([]);
     useEffect(() => {
         AOS.init({
@@ -16,7 +16,7 @@ export default function Books() {
         const fetchData = async () => {
             try {
                 const result = await toast.promise(
-                    fetch("http://localhost:3000").then(res => res.json()),
+                    fetch("process.env.REACT_APP_BACKEND_URL").then(res => res.json()),
                     {
                         loading: 'Fetching books...',
                         success: 'Books loaded successfully!',
@@ -34,15 +34,15 @@ export default function Books() {
 
     return (
         <>
-            <Toaster/>
+            <Toaster />
             <div className='search_bar' data-aos="zoom-in">
-                <input type="text" placeholder="Enter Name of Book..." value={search} onChange={e=>setSearch(e.target.value)}/>
+                <input type="text" placeholder="Enter Name of Book..." value={search} onChange={e => setSearch(e.target.value)} />
             </div>
-            <div className='book_cards' id="buy_books">  
-                {Array.isArray(bookData) && bookData.filter((item)=>{
-                        return (item.title.toLowerCase() === "" ? item : item.title.toLowerCase().includes(search.toLowerCase()) )
-                    }).map((data, index)=>{
-                    return <Card key={index} data={data} button={"Add to Cart"}/>
+            <div className='book_cards' id="buy_books">
+                {Array.isArray(bookData) && bookData.filter((item) => {
+                    return (item.title.toLowerCase() === "" ? item : item.title.toLowerCase().includes(search.toLowerCase()))
+                }).map((data, index) => {
+                    return <Card key={index} data={data} button={"Add to Cart"} />
                 })}
             </div>
         </>

@@ -18,16 +18,16 @@ function Create() {
     const [Price, setPrice] = useState("");
     const [Description, setDescription] = useState("");
     const handleSubmit = async (e) => {
-        if (title==="" || Author === "" || Image==="" || ISBN==="" || Price==="" || Description===""){
+        if (title === "" || Author === "" || Image === "" || ISBN === "" || Price === "" || Description === "") {
             toast.error("Fill all the required fields")
         }
         const result = await toast.promise(
-            fetch("http://localhost:3000/create", {
+            fetch("process.env.REACT_APP_BACKEND_URL/create", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({title, Author, ISBN, Price, Image,  Description})
+                body: JSON.stringify({ title, Author, ISBN, Price, Image, Description })
             }).then(res => res.json()),
             {
                 loading: 'Creating book...',
@@ -64,7 +64,7 @@ function Create() {
                         </div>
                         <div className="others">
                             <input className="inputcss" type="text" placeholder="Image URL(optional)" value={Image} onChange={(e) => setImage(e.target.value)} />
-                            <input className="inputcss" type="text" placeholder="ISBN(required)" value={ISBN} onChange={(e) => setISBN(e.target.value)} required/>
+                            <input className="inputcss" type="text" placeholder="ISBN(required)" value={ISBN} onChange={(e) => setISBN(e.target.value)} required />
                             <input className="inputcss" type="number" placeholder="Price(required)" value={Price} onChange={(e) => setPrice(e.target.value)} required></input>
                             <textarea className="textareacss" type="number" rows={4} placeholder="Description(optional)" value={Description} onChange={(e) => setDescription(e.target.value)} required></textarea>
                             <button type="submit" onClick={handleSubmit}>Add</button>

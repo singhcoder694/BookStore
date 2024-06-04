@@ -8,8 +8,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 function Update() {
     const location = useLocation();
-    const navigate= useNavigate();
-    const data=location.state.data;
+    const navigate = useNavigate();
+    const data = location.state.data;
     useEffect(() => {
         AOS.init({
             duration: 2000
@@ -21,15 +21,15 @@ function Update() {
     const [ISBN, setISBN] = useState(data.ISBN);
     const [Price, setPrice] = useState(data.Price);
     const [Description, setDescription] = useState(data.Description);
-    const updateBookDetail = ()=>{
-        const fetchData=async()=>{
+    const updateBookDetail = () => {
+        const fetchData = async () => {
             const result = await toast.promise(
-                fetch("http://localhost:3000/update/:id", {
+                fetch("process.env.REACT_APP_BACKEND_URL/update/:id", {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({title, Author, ISBN, Price, Image,  Description})
+                    body: JSON.stringify({ title, Author, ISBN, Price, Image, Description })
                 }).then(res => res.json()),
                 {
                     loading: 'Updating Book Details....',
@@ -38,8 +38,8 @@ function Update() {
                     position: 'top-right'
                 }
             );
-            if (result.status===200){
-                navigate("/",{replace:true});
+            if (result.status === 200) {
+                navigate("/", { replace: true });
             }
         }
         fetchData();
